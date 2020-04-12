@@ -176,7 +176,7 @@ def start():
             aktion = int(input('\nWähle deine Aktion '))
 
             if aktion == 1 :
-                chat_adventure.orte(Name, type, "Berge")
+                chat_adventure.orte(Name, type, str(stats["hp"]),str(stats["atk"]), str(stats["deff"]), str(stats["inv"]), "Berge")
 
             if aktion == 2 :
 

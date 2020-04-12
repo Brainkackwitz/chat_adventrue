@@ -58,20 +58,21 @@ def start(Name, type, hp, atk, deff, inv):
             if aktion == 2:
 
 
-                f = 1
+                f = 0.9
                 luck(Name, type, hp, atk, deff, inv)
-                u = 60/(f - l)
+                u = 60/(l / f)
                 d = u-20
                 b = u+20
-                t = random.randrange(d, b, 5)
-                print("Weil dich ein Abendteuer mit genommen hat, hast du "+t+" Minuten gebraucht")
+                t = random.randint(d, b)
+                os.system("cls")
+                delay_print("Weil dich ein Abendteuer mit genommen hat, hast du "+str(t)+" Minuten gebraucht")
                 if t < 50:
-                    print("er hat dir was zu esse gegeben")
+                    delay_print("Er hat dir etwas zu esse gegeben")
                 break
         except:
             os.system("cls")
             continue
-start("Name", "Riese", 10, 10, 10, 15)
+start("Name", "Werwolf", 10, 10, 10, 10)
 
 
 def Berge(Name, type):
@@ -112,5 +113,3 @@ def Berge(Name, type):
     if aktion == 3 :
         delay_print("Ich habe dich aus dem Jogong Fluss nahe der Hauptstadt erraus gezogen")
         delay_print("Wie heißt du mein Freund?")
-
-#Berge("Name", "type")

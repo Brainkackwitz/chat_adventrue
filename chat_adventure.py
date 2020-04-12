@@ -31,11 +31,11 @@ def game():
     intro.start()
 
 
-def orte(Name , type, orte):
+def orte(Name, type, hp, atk, deff, inv, orte):
     loading.gameload("", "", "", "", "", "", orte)
     if orte == "Berge":
-        Berge.Berge(Name, type)
-
+        #Berge.Berge(Name, type)
+        Berge.start(Name, type, hp, atk, deff, inv)
 
 def load():
     loading.loading()

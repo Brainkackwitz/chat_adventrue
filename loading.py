@@ -39,7 +39,7 @@ def loadcopy():
                 y = open(scoure+x)
                 b.append(y.readline())
 
-            chat_adventure.orte(b[0], b[1], b[6])
+            chat_adventure.orte(b[0], b[1], b[2],b[3], b[4], b[5],b[6])
 
 def gameload(Name, type, hp, atk, deff, inv, orte):
     if len(Name) > 0:
