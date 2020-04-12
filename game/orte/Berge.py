@@ -2,7 +2,6 @@ import time
 import sys
 from pygame import mixer
 import os
-import random
 mixer.init()
 def delay_print(s):
 
@@ -21,19 +20,6 @@ f = open("F:\\project's\\pyhton\\chat_adventrue\\game\\sounds\\settings.txt","r"
 mixer.music.set_volume(int(f.readline()[-3:-1])/100)
 f.close()
 mixer.music.play(0)
-def luck(Name, type, hp, atk, deff, inv):
-    global l
-    if type == "Basilisk" or type == "Riese":
-        l = 1.1
-    if type == "Goblin":
-        l = 2
-    if type == "Werwolf" or type == "Mensch" or type == "Elf":
-        l = 1
-    if type == "Fee":
-        l = 3
-    if inv > 10:
-        l = l+1
-
 
 def start(Name, type, hp, atk, deff, inv):
     os.system("cls")
@@ -49,30 +35,16 @@ def start(Name, type, hp, atk, deff, inv):
                 print(f"{i+1}.", x)
             aktion = int(input("Wähle deine Aktion "))
 
-            if aktion == 1 and type != "Riese":
+            if aktion == 1 && type == "Mensch" or type == "":
                 delay_print("Nach eta einer Stunde stehst du an den Toren der Stadt")
-                break
-            if aktion == 1 and type == "Riese":
-                delay_print("Du brauchtest keine Stunde, was der Fischer gesagt hat da du ein "+type+" bist.")
-                break
+
+
+
             if aktion == 2:
-
-
-                f = 0.9
-                luck(Name, type, hp, atk, deff, inv)
-                u = 60/(l / f)
-                d = u-20
-                b = u+20
-                t = random.randint(d, b)
-                os.system("cls")
-                delay_print("Weil dich ein Abendteuer mit genommen hat, hast du "+str(t)+" Minuten gebraucht")
-                if t < 50:
-                    delay_print("Er hat dir etwas zu esse gegeben")
-                break
+                if type ==
         except:
-            os.system("cls")
             continue
-start("Name", "Werwolf", 10, 10, 10, 10)
+start()
 
 
 def Berge(Name, type):
@@ -113,3 +85,5 @@ def Berge(Name, type):
     if aktion == 3 :
         delay_print("Ich habe dich aus dem Jogong Fluss nahe der Hauptstadt erraus gezogen")
         delay_print("Wie heißt du mein Freund?")
+
+#Berge("Name", "type")
