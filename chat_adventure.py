@@ -3,18 +3,20 @@ import sys
 from pygame import mixer
 import os
 import intro , menu
-from orte import Berge
+
+from game.orte import Berge
 import loading
 import save
 
 
 
 mixer.init()
+s = "F:\\project's\\pyhton\\chat_adventrue\\game\\sounds\\settings.txt"
 def delay_print(s):
 
     for c in s:
-        mixer.music.load('sounds/text.mp3')
-        f = open("F:\project's\pyhton\chat_adventrue\sounds\settings.txt","r")
+        mixer.music.load('game/sounds/text.mp3')
+        f = open(s,"r")
         mixer.music.set_volume(int(f.readline()[-3:-1])/100)
         f.close()
         mixer.music.play(0)
@@ -32,7 +34,7 @@ def game():
 def orte(Name , type, orte):
     loading.gameload("", "", "", "", "", "", orte)
     if orte == "Berge":
-         Berge.Berge(Name, type)
+        Berge.Berge(Name, type)
 
 
 def load():
@@ -46,11 +48,11 @@ def optionen():
     aktion = int(input('\nWähle deine Aktion '))
     if aktion == 1:
 
-        f = open("F:\project's\pyhton\chat_adventrue\sounds\settings.txt","r")
+        f = open(s,"r")
         print(f.readline())
         f.close()
         i = int(input())
-        f = open("F:\project's\pyhton\chat_adventrue\sounds\settings.txt","w")
+        f = open(s,"w")
 
         print("volume = "+str(i))
         f.write("volume = "+str(i)+" ")

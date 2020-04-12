@@ -7,8 +7,8 @@ import random
 def delay_print(s):
 
     for c in s:
-        mixer.music.load("F:\\project's\\pyhton\\chat_adventrue\\sounds\\text.mp3")
-        f = open("F:\\project's\\pyhton\\chat_adventrue\\sounds\\settings.txt","r")
+        mixer.music.load("F:\\project's\\pyhton\\chat_adventrue\\game\\sounds\\text.mp3")
+        f = open("F:\\project's\\pyhton\\chat_adventrue\\game\\sounds\\settings.txt","r")
         mixer.music.set_volume(int(f.readline()[-3:-1])/100)
         f.close()
         mixer.music.play(0)
